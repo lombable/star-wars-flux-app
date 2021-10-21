@@ -6,34 +6,25 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Home from "./views/Home"
+import Home from "./views/Home.jsx";
+import Characters from "./views/Characters.jsx"
+import Navbar from './components/Navbar.jsx';
+import Planets from './views/Planets.jsx'
 
-export default function App() {
+function App() {
   return (
     <Router>
       <div>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav> */}
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+        <Navbar/>
         <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/characters" component={Characters} />
+            <Route exact path="/planets" component={Planets} />
         </Switch>
       </div>
     </Router>
   );
 }
+
+export default App;

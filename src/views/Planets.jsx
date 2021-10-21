@@ -2,17 +2,17 @@ import React from "react";
 import '../App.css';
 import Carousel from "../components/Carousel";
 
-const Home = () => {
+const Planets = () => {
 
 return (
     <div>
         <div className="container pt-5">
         <Carousel/>
-        <h1>HOLA</h1>
+        <h1>HOLI</h1>
         </div>
     </div>
 )
 
 }
 
-export default Home;
+export default Planets;
