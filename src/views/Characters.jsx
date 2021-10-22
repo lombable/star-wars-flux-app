@@ -3,32 +3,31 @@ import { useState, useEffect } from 'react';
 
 const Characters = (props) => {
     const [swCharacters, setSwCharacters] = useState([]);
-    useEffect(() =>{
+    useEffect(() => {
         fetch("https://swapi.dev/api/people/").then((data) => {
             // console.log(data)
             return data.json();
-        }).then((res) =>{
+        }).then((res) => {
             console.log(res);
             setSwCharacters(res.results)
         })
-    }, [] 
+    }, []
     )
 
     const charsStarWars = swCharacters.map((character) => {
-        return <div className="card">
-            <img src="..." className="card-img-top" alt="..."/>
+        return (<div className="col-4 py-2">
+            <div className="card">
             <div className="card-body">
-            <h5 className="card-title">{character.name}</h5>
-            <p className="card-text">{character.height}</p>
-            <a href="./Characters.jsx" className="btn btn-primary">See Details</a>
-        </div>
-      </div>
+                <h5 className="card-title">{character.name}</h5>
+                <p className="card-text">Character's height is {character.height}</p>
+            </div>
+        </div></div>)
     })
 
     return (
-        <div className="pt-5 mt-5">
-            <div className="container">
-                {charsStarWars}
+        <div className="container mt-5">
+            <div className="row">
+                    {charsStarWars}
             </div>
         </div>
     )
