@@ -14,7 +14,7 @@ import Planets from './views/Planets.jsx'
 function App() {
   return (
     <Router>
-      <div>
+      <div style={{height: "100vh", width: "100vw", backgroundImage: `url(${process.env.PUBLIC_URL + '/img/starry-wallpaper.jpg'})` }}>
         <Navbar/>
         <Switch>
             <Route exact path="/" component={Home} />

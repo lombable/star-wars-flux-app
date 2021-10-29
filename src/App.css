@@ -15,6 +15,6 @@
   transition: all 0.3s;
 }
 
-.body {
-  background-image: "./img/starry-wallpaper.jpg";
+html, body, #app, #app>div {
+  height: 100%
 }
