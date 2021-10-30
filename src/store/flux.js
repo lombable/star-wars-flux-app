@@ -1,7 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			favorite: [""],
+			favorite: [],
+			people: [],
+			planets: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -20,10 +22,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			addFavorites: (characterName) => {
+				const store = getStore();
+				setStore({favorite : store.favorite.concat(characterName)});
+			},
+			loadCharacters: () => {
+				fetch("https://swapi.dev/api/people/").then((data) => {
+					return data.json();
+				}).then((res) => {
+					setStore({people : res.results})
+				})
+			},
+			loadPlanets: () => {
+				fetch("https://swapi.dev/api/planets/").then((data) => {
+					return data.json();
+				}).then((res) => {
+					setStore({planets : res.results})
+				})
 			},
 			changeColor: (index, color) => {
 				//get the store
