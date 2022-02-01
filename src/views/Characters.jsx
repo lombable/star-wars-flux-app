@@ -11,7 +11,7 @@ const Characters = (props) => {
         actions.addFavorites(characterName);
     }
 
-    const charsStarWars = store.people.map((character) => {
+    const charsStarWars = store.people.map((character, i) => {
         return (<div className="col-4 py-2 mt-5">
             <div className="card">
                 <div className="card-body">

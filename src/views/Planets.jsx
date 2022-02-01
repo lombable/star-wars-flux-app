@@ -11,7 +11,7 @@ const Planets = (props) => {
         console.log("Si funciona");
     }
 
-    const planetsStarWars = store.planets.map((planet) => {
+    const planetsStarWars = store.planets.map((planet, i) => {
         return (<div className="col-4 py-2 mt-5">
             <div className="card">
             <div className="card-body">
